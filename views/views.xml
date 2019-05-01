@@ -2,7 +2,7 @@
   <data>
     tet
     est
-    
+
     <!-- explicit list view definition -->
     <!--
     <record model="ir.ui.view" id="thuani.list">
