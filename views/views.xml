@@ -1,5 +1,8 @@
 <odoo>
   <data>
+    NEW
+    NEW
+    NEW
     <!-- explicit list view definition -->
     <!--
     <record model="ir.ui.view" id="thuani.list">
