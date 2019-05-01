@@ -1,0 +1,2 @@
+# thuani
+app for odoo
