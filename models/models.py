@@ -2,6 +2,16 @@
 
 from odoo import models, fields, api
 
+class ThuaniDashboard(models.Model):
+    _name = "thuani.dashboard"
+    _description = "thuani Dashboard"
+
+    # Blog
+    thuani.nam_blog_url = fields.Char(string="Blog URL", required=False, )
+
+
+
+
 # class thuani(models.Model):
 #     _name = 'thuani.thuani'
 
