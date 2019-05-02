@@ -7,7 +7,9 @@ class ThuaniDashboard(models.Model):
     _description = "thuani Dashboard"
 
     # Blog
-    thuani.nam_blog_url = fields.Char(string="Blog URL", required=False, )
+    thuani_blog_url_permalink = fields.Char(string="Blog URL", required=False, )
+    thuani_blog_url_category = fields.Char(string="Category", required=False, )
+    thuani_blog_url_postname = fields.Char(string="Postname", required=False, )
 
 
 
