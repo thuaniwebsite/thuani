@@ -56,9 +56,11 @@
     <!--odoomenuitemcateg-->
     <!-- This Menu Item Must have a parent -->
     <menuitem id="menu_thuani_dashboard_categ" name="Dashboard" parent="menu_thuani_dashboard_root" sequence="1"/>
+    <menuitem id="menu_thuani_blog_categ" name="Blog" parent="menu_thuani_dashboard_root" sequence="2"/>
     <!--odoomenuitemaction-->
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="menu_thuani_dashboard" name="thuani Dashboard" parent="menu_thuani_dashboard_categ" action="action_thuani_dashboard_views" sequence=""/>
+    <menuitem id="menu_thuani_blog" name="Settings" parent="menu_thuani_blog_categ" action="action_thuani_dashboard_views" sequence=""/>
 
   </data>
 </odoo>
