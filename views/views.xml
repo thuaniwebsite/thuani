@@ -41,17 +41,29 @@
         <field name="model">thuani.dashboard</field>
        <field name="arch" type="xml">
           <kanban>
-         <field name="thuani_blog_url_permalink"/>
-        <field name="thuani_blog_url_category"/>
-        <field name="thuani_blog_url_postname"/>
+              <field name="website_name"/>
+              <field name="thuani_blog_url_permalink"/>
+                <field name="thuani_blog_url_category"/>
+                <field name="thuani_blog_url_postname"/>
        <templates>
-       <t t-name="kanban-box">
-       </t>
+           <t t-name="kanban-box">
+               <div class="col-6 o_kanban_primary_right">
+                   <label class="col-1" string="Name" for="thuani_blog_url_permalink"/>
+                   <field name="thuani_blog_url_permalink" attrs="{'required': [('thuani_blog_url_permalink', '!=', False)] }"/>
+                   <field name="thuani_blog_url_permalink"/>
+                <field name="thuani_blog_url_category"/>
+                <field name="thuani_blog_url_postname"/>
+               </div>
+           </t>
        </templates>
        </kanban>
        </field>
       </record>
 
+
+<!--odooviewaction > add line view_type <field name="view_type">form</field> >-->
+<!--add line view_id <field name="view_id" ref="blogsetting_kanban"/> >-->
+<!--change view_mode from tree,form to kanban,form-->
     <record id="blogsetting_dashboard_action" model="ir.actions.act_window">
         <field name="name">Blog Settings</field>
         <field name="res_model">thuani.dashboard</field>
