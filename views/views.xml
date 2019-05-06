@@ -48,11 +48,17 @@
        <templates>
            <t t-name="kanban-box">
                <div class="col-6 o_kanban_primary_right">
+                   <div>
                    <label class="col-1" string="Name" for="thuani_blog_url_permalink"/>
                    <field name="thuani_blog_url_permalink" attrs="{'required': [('thuani_blog_url_permalink', '!=', False)] }"/>
                    <field name="thuani_blog_url_permalink"/>
                 <field name="thuani_blog_url_category"/>
-                <field name="thuani_blog_url_postname"/>
+                <field name="thuani_blog_url_postname"/></div>
+                   <div>
+                       <field name="thuani_blog_url_category" widget="selection"/>
+                       <label class="col-lg-3 o_light_label" string="Name" for="thuani_blog_url_category"/>
+                       <field name="thuani_blog_url_category" attrs="{'required': [('thuani_blog_url_permalink', '!=', False)] }"/>
+                    </div>
                </div>
            </t>
        </templates>
