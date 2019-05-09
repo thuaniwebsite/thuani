@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_thuani,thuani.thuani,model_thuani_dashboard,,1,1,1,1
+access_thuani,thuani.thuani,model_thuani_post,,1,1,1,1
