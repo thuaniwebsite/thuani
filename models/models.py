@@ -7,6 +7,7 @@ class ThuaniPost(models.Model):
     _description = "thuani Post"
 
     heading = fields.Char(string="Heading", required=False, )
+    heading_url = fields.Char(string="Heading URL", required=False, )
 
 # class ThuaniDashboard(models.Model):
 #     _name = "thuani.dashboard"

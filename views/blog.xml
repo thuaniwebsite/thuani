@@ -6,10 +6,11 @@
             <field name="name">view.thuani.post.form</field>
             <field name="model">thuani.post</field>
             <field name="arch" type="xml">
-                <form string="">
+                <form string="Heading">
                     <sheet>
                         <group>
                             <field name="heading"/>
+                            <field name="heading_url"/>
                         </group>
                     </sheet>
                 </form>
@@ -20,10 +21,11 @@
             <field name="name">view.thuani.post</field>
             <field name="model">thuani.post</field>
             <field name="arch" type="xml">
-                <form string="">
+                <form string="Heading">
                     <sheet>
                         <group>
                             <field name="heading"/>
+                            <field name="heading_url"/>
                         </group>
                     </sheet>
                 </form>
@@ -36,6 +38,7 @@
             <field name="arch" type="xml">
                 <tree string="thuani post tree">
                     <field name="heading"/>
+                    <field name="heading_url"/>
                 </tree>
             </field>
         </record>
@@ -46,11 +49,7 @@
             <field name="res_model">thuani.post</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-              <p class="oe_view_nocontent_create">
-                Create a new post
-              </p><p>
-                <!-- More details about what a user can do with this object will be OK -->
-              </p>
+              <p class="oe_view_nocontent_create">Create a new post</p>
             </field>
         </record>
 
