@@ -9,8 +9,9 @@
                 <form string="">
                     <sheet>
                         <group>
-                            <field name="heading"/>
                             <field name="base"/>
+                            <field name="heading"/>
+
                             <!--<field name="category"/>-->
                             <field name="heading_url"/>
                             <field name="base_url"/>
