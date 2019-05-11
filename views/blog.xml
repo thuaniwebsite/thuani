@@ -10,22 +10,10 @@
                     <sheet>
                         <group>
                             <field name="heading"/>
+                            <field name="base"/>
                             <field name="heading_url"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-        <record id="view_thuani_post" model="ir.ui.view">
-            <field name="name">view.thuani.post</field>
-            <field name="model">thuani.post</field>
-            <field name="arch" type="xml">
-                <form string="">
-                    <sheet>
-                        <group>
-                            <field name="heading"/>
-                            <field name="heading_url"/>
+                            <field name="base_url"/>
+                            <field name="combine_url"/>
                         </group>
                     </sheet>
                 </form>
@@ -38,7 +26,10 @@
             <field name="arch" type="xml">
                 <tree string="thuani post tree">
                     <field name="heading"/>
+                    <field name="base"/>
                     <field name="heading_url"/>
+                    <field name="base_url"/>
+                    <field name="combine_url"/>
                 </tree>
             </field>
         </record>
