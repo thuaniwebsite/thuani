@@ -19,9 +19,18 @@ class ThuaniPost(models.Model):
 
     @api.onchange('base')
     def set_base_url(self):
-        # replace space with dash; make everything lowercase .lower()
-        self.base_url = str(self.base)
-        self.combine_url = str("/" + self.base_url)
+        # make base url same as base data; make everything lowercase .lower()
+        self.base_url = str(self.base).lower()
+        # check if theres data in combine url. If not, make it a string so return has no error bool false not string
+        if self.combine_url == False:
+            self.combine_url = 'string'
+        # if have data, combine the url
+        elif not self.base:
+            # if base has no data, just use post heading
+            self.combine_url = str("/" + self.heading_url)
+        else:
+            # if base has data, do normal combine all
+            self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
         return
 
     # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
@@ -29,8 +38,35 @@ class ThuaniPost(models.Model):
     def set_heading_url(self):
         # replace space with dash; make everything lowercase .lower()
         self.heading_url = str(self.heading).replace(' ', '-').lower()
-        self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
+        if not self.base:
+            # if base has no data
+            self.combine_url = str("/" + self.heading_url)
+        else:
+            # else combine as normal
+            self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
         return
+
+# working
+    # @api.onchange('base')
+    # def set_base_url(self):
+    #     # replace space with dash; make everything lowercase .lower()
+    #     self.base_url = str(self.base)
+    #     # check if theres data in combine url. If not, make it a string so return has no error bool false not string
+    #     if self.combine_url == False:
+    #         self.combine_url = 'string'
+    #     # if have data, combine the url
+    #     else:
+    #         self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
+    #     return
+    #
+    # # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
+    # @api.onchange('heading')
+    # def set_heading_url(self):
+    #     # replace space with dash; make everything lowercase .lower()
+    #     self.heading_url = str(self.heading).replace(' ', '-').lower()
+    #     self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
+    #     return
+
 
 
 
