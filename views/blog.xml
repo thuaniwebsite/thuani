@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_thuani_post_form" model="ir.ui.view">
+            <field name="name">view.thuani.post.form</field>
+            <field name="model">thuani.post</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="heading"/>
+                            <field name="heading_url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_thuani_post" model="ir.ui.view">
+            <field name="name">view.thuani.post</field>
+            <field name="model">thuani.post</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="heading"/>
+                            <field name="heading_url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_thuani_post_tree" model="ir.ui.view">
+            <field name="name">view.thuani.post.tree</field>
+            <field name="model">thuani.post</field>
+            <field name="arch" type="xml">
+                <tree string="thuani post tree">
+                    <field name="heading"/>
+                    <field name="heading_url"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_thuani_post_view" model="ir.actions.act_window">
+            <field name="name">Blog</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.post</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">Create a new post</p>
+            </field>
+        </record>
+
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="menu_thuani_root" name="thuani" sequence="1"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="menu_thuani_blog_categ" name="Blog" parent="menu_thuani_root" sequence=""/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="menu_thuani_post" name="Post" parent="menu_thuani_blog_categ" action="action_thuani_post_view" sequence=""/>
+
+
+
+
+    </data>
+</odoo>
