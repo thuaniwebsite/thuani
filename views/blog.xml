@@ -11,8 +11,10 @@
                         <group>
                             <field name="heading"/>
                             <field name="base"/>
+                            <!--<field name="category"/>-->
                             <field name="heading_url"/>
                             <field name="base_url"/>
+                            <!--<field name="category_url"/>-->
                             <field name="combine_url"/>
                         </group>
                     </sheet>
@@ -27,8 +29,10 @@
                 <tree string="thuani post tree">
                     <field name="heading"/>
                     <field name="base"/>
+                    <!--<field name="category"/>-->
                     <field name="heading_url"/>
                     <field name="base_url"/>
+                    <!--<field name="category_url"/>-->
                     <field name="combine_url"/>
                 </tree>
             </field>
