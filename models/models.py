@@ -22,6 +22,8 @@ class ThuaniPost(models.Model):
         # replace space with dash; make everything lowercase .lower()
         self.base_url = str(self.base)
         self.combine_url = str("/" + self.base_url)
+        if self.base_url is not None:
+            self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
         return
 
     # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
