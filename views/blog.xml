@@ -6,7 +6,7 @@
             <field name="name">view.thuani.post.form</field>
             <field name="model">thuani.post</field>
             <field name="arch" type="xml">
-                <form string="Heading">
+                <form string="">
                     <sheet>
                         <group>
                             <field name="heading"/>
@@ -21,7 +21,7 @@
             <field name="name">view.thuani.post</field>
             <field name="model">thuani.post</field>
             <field name="arch" type="xml">
-                <form string="Heading">
+                <form string="">
                     <sheet>
                         <group>
                             <field name="heading"/>
