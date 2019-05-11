@@ -11,42 +11,27 @@ class ThuaniPost(models.Model):
     heading = fields.Char(string="Heading", required=True, )  # Heading (Title) of the Post/Article
     heading_url = fields.Char(string="Heading URL", required=False, )  # URL of the post
 
-    # base url for post
     base = fields.Char(string="Base", required=False, )
     base_url = fields.Char(string="Base URL", required=False, )
 
-    # Combine URL for post
+    # Combine URL
     combine_url = fields.Char(string="Combine URL", required=False, )
 
-    # category url
-    # category = fields.Char(string="Category", required=False, )
-    # category_url = fields.Char(string="Category URL", required=False, )
+    @api.onchange('base')
+    def set_base_url(self):
+        # replace space with dash; make everything lowercase .lower()
+        self.base_url = str(self.base)
+        self.combine_url = str("/" + self.base_url)
+        return
 
     # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
     @api.onchange('heading')
     def set_heading_url(self):
         # replace space with dash; make everything lowercase .lower()
         self.heading_url = str(self.heading).replace(' ', '-').lower()
-        #self.combine_url = str("/" + self.base_url + "/" + self.category_url + "/" + self.heading_url)
         self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
         return
 
-    # when base has an update, update the base_url and combine_url
-    @api.onchange('base')
-    def set_base_url(self):
-        # replace space with dash; make everything lowercase .lower()
-        self.base_url = str(self.base)
-        #self.combine_url = str("/" + self.base_url + "/" + self.category_url + "/" + self.heading_url)
-        self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
-        return
-
-    # # when category updates, update the combine url
-    # @api.onchange('category')
-    # def set_category_url(self):
-    #     # replace space with dash; make everything lowercase .lower()
-    #     self.category_url = str(self.category).lower()
-    #     self.combine_url = str("/" + self.base_url + "/" + self.category_url + "/" + self.heading_url)
-    #     return
 
 
     # base url. When base is updated
