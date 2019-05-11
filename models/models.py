@@ -17,6 +17,13 @@ class ThuaniPost(models.Model):
     # Combine URL
     combine_url = fields.Char(string="Combine URL", required=False, )
 
+    @api.onchange('base')
+    def set_base_url(self):
+        # replace space with dash; make everything lowercase .lower()
+        self.base_url = str(self.base)
+        self.combine_url = str("/" + self.base_url)
+        return
+
     # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
     @api.onchange('heading')
     def set_heading_url(self):
@@ -25,12 +32,7 @@ class ThuaniPost(models.Model):
         self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
         return
 
-    @api.onchange('base')
-    def set_base_url(self):
-        # replace space with dash; make everything lowercase .lower()
-        self.base_url = str(self.base)
-        self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
-        return
+
 
     # base url. When base is updated
     # @api.onchange('base')
