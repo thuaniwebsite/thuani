@@ -63,12 +63,22 @@ class ThuaniPost2(models.Model):
     # this takes data from thuani.base in field base (rec name is base)
     base_many = fields.Many2one(comodel_name="thuani.base", string="Base Many", required=False, )
 
+# class ThuaniCategoryRank(models.Model):
+#     _name = "thuani.category.rank"
+#     _description = "thuani Category Rank"
+#     _rec_name = "category_rank"
+#
+#     category_rank = fields.Char(string="Category Rank", required=False, )
+#     odoofield
+
+
 class ThuaniCategory(models.Model):
     _name = "thuani.category"
     _description = "thuani Category"
 
     category = fields.Char(string="Category", required=False, )
     category_url = fields.Char(string="Category URL", required=False, )
+
 
 
 
