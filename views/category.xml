@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="form_view_thuani_category" model="ir.ui.view">
+            <field name="name">form.view.thuani.category</field>
+            <field name="model">thuani.category</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="category"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="tree_view_thuani_category" model="ir.ui.view">
+            <field name="name">tree.view.thuani.category</field>
+            <field name="model">thuani.category</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_view_thuani_category" model="ir.actions.act_window">
+            <field name="name">Category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Add new category
+              </p>
+            </field>
+        </record>
+
+
+    <!--thuani > Blog > Category-->
+    <menuitem id="menu_thuani_category" name="Category" parent="menu_thuani_blog_categ" action="action_view_thuani_category" sequence=""/>
+    </data>
+</odoo>

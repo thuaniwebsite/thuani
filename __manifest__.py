@@ -28,6 +28,7 @@
         'views/blog.xml',
         'views/base.xml',
         'views/post.xml',
+        'views/category.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

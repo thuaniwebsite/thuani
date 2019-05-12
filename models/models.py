@@ -49,7 +49,8 @@ class ThuaniPost(models.Model):
 class ThuaniBase(models.Model):
     _name = "thuani.base"
     _description = "thuani Base"
-    _rec_name = "base"  # makes the name linked to the field you want to display for many2one
+    _rec_name = "base"  # makes the name linked to the field you want to display for many2one. If datafield
+    # has name = , then no need for rec_name as it's default is to datafield name
 
     base = fields.Char(string="Base", required=False, )
     base_url = fields.Char(string="Base URL", required=False, )
@@ -59,7 +60,16 @@ class ThuaniPost2(models.Model):
     _name = "thuani.post2"
     _description = "thuani Post2"
 
+    # this takes data from thuani.base in field base (rec name is base)
     base_many = fields.Many2one(comodel_name="thuani.base", string="Base Many", required=False, )
+
+class ThuaniCategory(models.Model):
+    _name = "thuani.category"
+    _description = "thuani Category"
+
+    category = fields.Char(string="Category", required=False, )
+    category_url = fields.Char(string="Category URL", required=False, )
+
 
 
 # working
