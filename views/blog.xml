@@ -2,8 +2,8 @@
 <odoo>
     <data>
 
-        <record id="view_thuani_post_form" model="ir.ui.view">
-            <field name="name">view.thuani.post.form</field>
+        <record id="form_view_thuani_post" model="ir.ui.view">
+            <field name="name">form.view.thuani.post</field>
             <field name="model">thuani.post</field>
             <field name="arch" type="xml">
                 <form string="">
@@ -23,8 +23,8 @@
             </field>
         </record>
 
-        <record id="view_thuani_post_tree" model="ir.ui.view">
-            <field name="name">view.thuani.post.tree</field>
+        <record id="tree_view_thuani_post" model="ir.ui.view">
+            <field name="name">tree.view.thuani.post</field>
             <field name="model">thuani.post</field>
             <field name="arch" type="xml">
                 <tree string="thuani post tree">
@@ -39,7 +39,7 @@
             </field>
         </record>
 
-        <record id="action_thuani_post_view" model="ir.actions.act_window">
+        <record id="action_view_thuani_post" model="ir.actions.act_window">
             <field name="name">Blog</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">thuani.post</field>
@@ -54,9 +54,8 @@
     <!--thuani > Blog-->
     <menuitem id="menu_thuani_blog_categ" name="Blog" parent="menu_thuani_root" sequence=""/>
     <!--thuani > Blog > Post-->
-    <menuitem id="menu_thuani_post" name="Post" parent="menu_thuani_blog_categ" action="action_thuani_post_view" sequence=""/>
-    <!--thuani > Blog > Base-->
-    <menuitem id="menu_thuani_base" name="Base" parent="menu_thuani_blog_categ" action="action_thuani_base_view" sequence=""/>
+    <menuitem id="menu_thuani_post" name="Post" parent="menu_thuani_blog_categ" action="action_view_thuani_post" sequence=""/>
+
 
 
 

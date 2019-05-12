@@ -2,9 +2,8 @@
 <odoo>
     <data>
 
-        view_thuani_post_form
-        <record id="view_form_thuani_post2" model="ir.ui.view">
-            <field name="name">view.form.thuani.post2</field>
+        <record id="form_view_thuani_post2" model="ir.ui.view">
+            <field name="name">form.view.thuani.post2</field>
             <field name="model">thuani.post2</field>
             <field name="arch" type="xml">
                 <form string="">
@@ -18,8 +17,8 @@
         </record>
 
 
-        <record id="view_tree_thuani_post2" model="ir.ui.view">
-            <field name="name">view.tree.thuani.post2</field>
+        <record id="tree_view_thuani_post2" model="ir.ui.view">
+            <field name="name">tree.view.thuani.post2</field>
             <field name="model">thuani.post2</field>
             <field name="arch" type="xml">
                 <tree string="">

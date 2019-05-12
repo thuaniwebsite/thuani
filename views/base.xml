@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <!--odooform-->
-        <record id="view_thuani_base_form" model="ir.ui.view">
-            <field name="name">view.thuani.base.form</field>
+        <record id="form_view_thuani_base" model="ir.ui.view">
+            <field name="name">form.view.thuani.base</field>
             <field name="model">thuani.base</field>
             <field name="arch" type="xml">
                 <form string="">
@@ -18,8 +18,8 @@
         </record>
 
         <!--odootree-->
-        <record id="view_thuani_base_tree" model="ir.ui.view">
-            <field name="name">view.thuani.base.tree</field>
+        <record id="tree_view_thuani_base" model="ir.ui.view">
+            <field name="name">tree.view.thuani.base</field>
             <field name="model">thuani.base</field>
             <field name="arch" type="xml">
                 <tree string="">
@@ -30,7 +30,7 @@
         </record>
 
         <!--odooviewaction-->
-        <record id="action_thuani_base_view" model="ir.actions.act_window">
+        <record id="action_view_thuani_base" model="ir.actions.act_window">
             <field name="name">Base</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">thuani.base</field>
@@ -42,12 +42,7 @@
             </field>
         </record>
 
-
-    <!--&lt;!&ndash; This Menu Item will appear in the Upper bar, That's why It needs NO parent or action &ndash;&gt;-->
-    <!--<menuitem id="menu_thuani_root" name="thuani" sequence="1"/>-->
-    <!--&lt;!&ndash; This Menu Item Must have a parent &ndash;&gt;-->
-    <!--<menuitem id="menu_thuani_blog_categ" name="Blog" parent="menu_thuani_root" sequence=""/>-->
-    <!--&lt;!&ndash; This Menu Item must have a parent and an action &ndash;&gt;-->
-    <!--<menuitem id="menu_thuani_base" name="Base" parent="menu_thuani_blog_categ" action="action_thuani_base_view" sequence=""/>-->
+    <!--thuani > Blog > Base-->
+    <menuitem id="menu_thuani_base" name="Base" parent="menu_thuani_blog_categ" action="action_view_thuani_base" sequence=""/>
     </data>
 </odoo>
