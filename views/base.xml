@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--odooform-->
+        <record id="form_view_thuani_base" model="ir.ui.view">
+            <field name="name">form.view.thuani.base</field>
+            <field name="model">thuani.base</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="base"/>
+                            <field name="base_url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--odootree-->
+        <record id="tree_view_thuani_base" model="ir.ui.view">
+            <field name="name">tree.view.thuani.base</field>
+            <field name="model">thuani.base</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="base"/>
+                    <field name="base_url"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--odooviewaction-->
+        <record id="action_view_thuani_base" model="ir.actions.act_window">
+            <field name="name">Base</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.base</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create a new base
+              </p>
+            </field>
+        </record>
+
+    <!--thuani > Blog > Base-->
+    <menuitem id="menu_thuani_base" name="Base" parent="menu_thuani_blog_categ" action="action_view_thuani_base" sequence=""/>
+    </data>
+</odoo>
