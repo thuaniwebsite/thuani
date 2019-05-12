@@ -7,8 +7,8 @@ class ThuaniPost(models.Model):
     _name = "thuani.post"
     _description = "thuani Post"
 
-    # fields for Heading of the Post (article/blog)
-    heading = fields.Char(string="Heading", required=True, )  # Heading (Title) of the Post/Article
+    # fields for Heading of the Post (article/blog). False bc for future templating. Check in future
+    heading = fields.Char(string="Heading", required=False, )  # Heading (Title) of the Post/Article
     heading_url = fields.Char(string="Heading URL", required=False, )  # URL of the post
 
     base = fields.Char(string="Base", required=False, )
@@ -75,9 +75,17 @@ class ThuaniPost2(models.Model):
 class ThuaniCategory(models.Model):
     _name = "thuani.category"
     _description = "thuani Category"
+    _rec_name = "category"
 
     category = fields.Char(string="Category", required=False, )
     category_url = fields.Char(string="Category URL", required=False, )
+
+
+class ThuaniCategoryCombine(models.Model):
+    _name = "thuani.category.combine"
+    _description = "thuani Category Combine"
+
+    category_combine = fields.Many2one(comodel_name="thuani.category", string="Category Combine", required=False, )
 
 
 

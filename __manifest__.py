@@ -29,6 +29,7 @@
         'views/base.xml',
         'views/post.xml',
         'views/category.xml',
+        'views/category_combine.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
