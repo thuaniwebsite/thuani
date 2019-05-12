@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        view_thuani_post_form
+        <record id="view_form_thuani_post2" model="ir.ui.view">
+            <field name="name">view.form.thuani.post2</field>
+            <field name="model">thuani.post2</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="base_many"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_tree_thuani_post2" model="ir.ui.view">
+            <field name="name">view.tree.thuani.post2</field>
+            <field name="model">thuani.post2</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="base_many"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_view_thuani_post2" model="ir.actions.act_window">
+            <field name="name">Post2</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.post2</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                New Post
+              </p>
+            </field>
+        </record>
+
+
+    <!--thuani > Blog > Post2-->
+    <menuitem id="menu_thuani_post2" name="Post2" parent="menu_thuani_blog_categ" action="action_view_thuani_post2" sequence=""/>
+    </data>
+</odoo>

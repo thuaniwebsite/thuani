@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_thuani_post,thuani.thuani,model_thuani_post,,1,1,1,1
 access_thuani_base,thuani.thuani,model_thuani_base,,1,1,1,1
+access_thuani_post2,thuani.thuani,model_thuani_post2,,1,1,1,1

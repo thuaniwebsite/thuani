@@ -49,9 +49,18 @@ class ThuaniPost(models.Model):
 class ThuaniBase(models.Model):
     _name = "thuani.base"
     _description = "thuani Base"
+    _rec_name = "base"  # makes the name linked to the field you want to display for many2one
 
     base = fields.Char(string="Base", required=False, )
     base_url = fields.Char(string="Base URL", required=False, )
+
+
+class ThuaniPost2(models.Model):
+    _name = "thuani.post2"
+    _description = "thuani Post2"
+
+    base_many = fields.Many2one(comodel_name="thuani.base", string="Base Many", required=False, )
+
 
 # working
     # @api.onchange('base')
