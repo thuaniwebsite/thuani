@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--odooform-->
+        <record id="view_thuani_base_form" model="ir.ui.view">
+            <field name="name">view.thuani.base.form</field>
+            <field name="model">thuani.base</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="base"/>
+                            <field name="base_url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--odootree-->
+        <record id="view_thuani_base_tree" model="ir.ui.view">
+            <field name="name">view.thuani.base.tree</field>
+            <field name="model">thuani.base</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="base"/>
+                    <field name="base_url"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--odooviewaction-->
+        <record id="action_thuani_base_view" model="ir.actions.act_window">
+            <field name="name">Base</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.base</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create a new base
+              </p>
+            </field>
+        </record>
+
+
+    <!--&lt;!&ndash; This Menu Item will appear in the Upper bar, That's why It needs NO parent or action &ndash;&gt;-->
+    <!--<menuitem id="menu_thuani_root" name="thuani" sequence="1"/>-->
+    <!--&lt;!&ndash; This Menu Item Must have a parent &ndash;&gt;-->
+    <!--<menuitem id="menu_thuani_blog_categ" name="Blog" parent="menu_thuani_root" sequence=""/>-->
+    <!--&lt;!&ndash; This Menu Item must have a parent and an action &ndash;&gt;-->
+    <!--<menuitem id="menu_thuani_base" name="Base" parent="menu_thuani_blog_categ" action="action_thuani_base_view" sequence=""/>-->
+    </data>
+</odoo>

@@ -49,12 +49,14 @@
             </field>
         </record>
 
-    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <!--thuani-->
     <menuitem id="menu_thuani_root" name="thuani" sequence="1"/>
-    <!-- This Menu Item Must have a parent -->
+    <!--thuani > Blog-->
     <menuitem id="menu_thuani_blog_categ" name="Blog" parent="menu_thuani_root" sequence=""/>
-    <!-- This Menu Item must have a parent and an action -->
+    <!--thuani > Blog > Post-->
     <menuitem id="menu_thuani_post" name="Post" parent="menu_thuani_blog_categ" action="action_thuani_post_view" sequence=""/>
+    <!--thuani > Blog > Base-->
+    <menuitem id="menu_thuani_base" name="Base" parent="menu_thuani_blog_categ" action="action_thuani_base_view" sequence=""/>
 
 
 

@@ -46,6 +46,13 @@ class ThuaniPost(models.Model):
             self.combine_url = str("/" + self.base_url + "/" + self.heading_url)
         return
 
+class ThuaniBase(models.Model):
+    _name = "thuani.base"
+    _description = "thuani Base"
+
+    base = fields.Char(string="Base", required=False, )
+    base_url = fields.Char(string="Base URL", required=False, )
+
 # working
     # @api.onchange('base')
     # def set_base_url(self):
