@@ -8,9 +8,9 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="blue" attrs="{'invisible': [('pink','=',True),('yellow','=',True)]}"/>
-                    <field name="pink" attrs="{'invisible': [('blue','=',True),('yellow','=',True)]}"/>
-                    <field name="yellow" attrs="{'invisible': [('pink','=',True),('blue','=',True)]}"/>
+                    <field name="blue" attrs="{'invisible':['|',('pink','=',True),('yellow','=',True)]}"/>
+                    <field name="pink" attrs="{'invisible':['|',('blue','=',True),('yellow','=',True)]}"/>
+                    <field name="yellow" attrs="{'invisible':['|',('pink','=',True),('blue','=',True)]}"/>
                 </group>
             </form>
         </field>
