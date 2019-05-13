@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!--form view; actual form that is filled in-->
         <record id="form_view_thuani_category_combine" model="ir.ui.view">
             <field name="name">form.view.thuani.category.combine</field>
             <field name="model">thuani.category.combine</field>
+            <field name="target">inline</field>
             <field name="arch" type="xml">
                 <form string="">
                     <sheet>
                         <group>
+                            <!--<field name="category_combine" target="inline" options="{'no_open': True, 'no_create_edit': True, 'no_quick_create': True}" widget="selection"/>-->
                             <field name="category_combine"/>
                         </group>
                     </sheet>
@@ -15,23 +18,36 @@
             </field>
         </record>
 
-        <record id="form_view_thuani_category_combine" model="ir.ui.view">
-            <field name="name">form.view.thuani.category.combine</field>
-            <field name="model">thuani.category.combine</field>
-            <field name="arch" type="xml">
-                <form string="">
-                    <sheet>
-                        <group>
-                            <field name="category_combine"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
+        <record id="kanban_view_thuani_category_combine" model="ir.ui.view">
+         <field name="name">kanban.view.thuani.category.combine</field>
+          <field name="model">thuani.category.combine</field>
+         <field name="arch" type="xml">
+            <kanban>
+           <field name="category_combine"/>
+         <templates>
+         <t t-name="kanban-box">
+                                 <div class="oe_resource_vignette">
+
+                        <div class="oe_resource_details">
+                            <ul><field name="category_combine"/>
+<!--Here you have to write the object's field name which you want to display in kanban view -->
+                               <!--<li><field name="category_combine"/></li>-->
+                               <!--<li><field name="category_combine"/></li>-->
+                               <!--<li><field name="category_combine"/></li>-->
+                               <!--<li><field name="category_combine"/> </li>-->
+                             </ul>
+                        </div>
+                    </div>
+         </t>
+         </templates>
+         </kanban>
+         </field>
         </record>
 
         <record id="tree_view_thuani_category_combine" model="ir.ui.view">
             <field name="name">tree.view.thuani.category.combine</field>
             <field name="model">thuani.category.combine</field>
+            <!--<field name="target">inline</field>-->
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="category_combine"/>
@@ -43,14 +59,16 @@
             <field name="name">Category Combine 2</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">thuani.category.combine</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="target">inline</field>
+            <!--<field name="limit">100</field>-->
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
                 Combine new Category
               </p>
             </field>
         </record>
-
+<!--<field name="brand_id" options="{'no_open': True, 'no_create_edit': True, 'no_quick_create': True}" widget="selection"/>-->
 
     <!--thuani > Blog > Category Combine-->
     <menuitem id="menu_thuani_category_combine" name="Category Combine" parent="menu_thuani_blog_categ" action="action_view_thuani_category_combine" sequence=""/>

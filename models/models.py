@@ -86,6 +86,9 @@ class ThuaniCategory(models.Model):
 class ThuaniCategoryCombine(models.Model):
     _name = "thuani.category.combine"
     _description = "thuani Category Combine"
+    _rec_name = "category_combine"
+
+    # category_combine = fields.Selection(string="Category1", selection=[('thuani.category')], required=False, )
 
     category_combine = fields.Many2one(comodel_name="thuani.category", string="Category Combine", required=False, )
 
