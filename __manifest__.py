@@ -30,6 +30,7 @@
         'views/post.xml',
         'views/category.xml',
         'views/category_combine.xml',
+        'views/checkbox.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

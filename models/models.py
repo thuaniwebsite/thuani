@@ -115,3 +115,12 @@ class ThuaniCategoryCombine(models.Model):
 # security/ir.model.access.csv add new line >
 # access_thuani_category_combine,thuani.thuani,model_thuani_category_combine,,1,1,1,1
 # access_uniqueNameOfClass; model_ is _name in your class
+
+
+class ThuaniCheckbox(models.Model):
+    _name = "thuani.checkbox"
+    _description = "thuani Checkbox"
+
+    blue = fields.Boolean('Blue')
+    pink = fields.Boolean('Pink')
+    yellow = fields.Boolean('Yellow')

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="module_example_form" model="ir.ui.view">
+        <field name="name">myquality list</field>
+        <field name="model">thuani.checkbox</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="blue" attrs="{'invisible': [('pink','=',True),('yellow','=',True)]}"/>
+                    <field name="pink" attrs="{'invisible': [('blue','=',True),('yellow','=',True)]}"/>
+                    <field name="yellow" attrs="{'invisible': [('pink','=',True),('blue','=',True)]}"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_thuani_checkbox" model="ir.actions.act_window">
+        <field name="name">action.view.thuani.checkbox</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">thuani.checkbox</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Create new data
+          </p>
+        </field>
+    </record>
+
+    <!--thuani > Blog > Checkbox-->
+    <menuitem id="menu_thuani_checkbox" name="Checkbox" parent="menu_thuani_blog_categ" action="action_view_thuani_checkbox" sequence=""/>
+    </data>
+</odoo>

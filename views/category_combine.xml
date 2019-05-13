@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--<record model="ir.ui.view" id="form_view_thuani_category_combine">-->
-            <!--<field name="name">Buttons</field>-->
-            <!--<field name="model">thuani.category.combine</field>-->
-            <!--<field name="type">form</field>-->
-            <!--<field name="arch" type="xml">-->
-                <!--<form string="Button record">-->
-                <!--&lt;!&ndash;The header tag is built to add buttons within. This puts them at the top &ndash;&gt;-->
-                <!--<header>-->
-                <!--&lt;!&ndash;The oe_highlight class gives the button a red color when it is saved.-->
-                <!--It is usually used to indicate the expected behaviour. &ndash;&gt;-->
-                <!--&lt;!&ndash;<button string="Generate name" type="object" name="generate_record_name" class="oe_highlight"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;<button string="Generate password" type="object" name="generate_record_password"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;<button string="Clear data" type="object" name="clear_record_data"/>&ndash;&gt;-->
-                <!--</header>-->
-                <!--<group>-->
-                <!--<field name="name"/>-->
-                <!--<field name="password"/>-->
-                <!--</group>-->
-            <!--</form>-->
-            <!--</field>-->
-        <!--</record>-->
-
         <record id="form_view_thuani_category_combine" model="ir.ui.view">
             <field name="name">form.view.thuani.category.combine</field>
             <field name="model">thuani.category.combine</field>
@@ -36,19 +14,6 @@
                 </form>
             </field>
         </record>
-
-
-
-        <!--<button-->
-    <!--class="oe_stat_button"-->
-    <!--type="action"-->
-    <!--attrs="{'invisible':[('use_tasks','=', False)]}"-->
-    <!--name="%(act_project_project_2_project_task_all)d"-->
-
-
-        <!--<header>-->
-        <!--<button name="method_name" string="open_form" type="object"/>-->
-        <!--</header>-->
 
         <record id="form_view_thuani_category_combine" model="ir.ui.view">
             <field name="name">form.view.thuani.category.combine</field>
@@ -75,7 +40,7 @@
         </record>
 
         <record id="action_view_thuani_category_combine" model="ir.actions.act_window">
-            <field name="name">Category Combine</field>
+            <field name="name">Category Combine 2</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">thuani.category.combine</field>
             <field name="view_mode">tree,form</field>
