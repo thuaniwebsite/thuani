@@ -92,6 +92,15 @@ class ThuaniCategoryCombine(models.Model):
 
     category_combine = fields.Many2one(comodel_name="thuani.category", string="Category Combine", required=False, )
 
+class ThuaniCategoryCombine2(models.Model):
+    _name = "thuani.category.combine2"
+    _description = "thuani Category Combine2"
+    _rec_name = "category_combine2"
+
+    # category_combine = fields.Selection(string="Category1", selection=[('thuani.category')], required=False, )
+
+    category_combine2 = fields.Many2one(comodel_name="thuani.category", string="Category Combine2", required=False, )
+
     # @api.multi
     # def method_name(self):
     #     view_id = self.env.ref('thuani.category.tree_view_thuani_category').id
