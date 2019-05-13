@@ -5,13 +5,13 @@
         <record id="form_view_thuani_category_combine2" model="ir.ui.view">
             <field name="name">form.view.thuani.category.combine2</field>
             <field name="model">thuani.category.combine2</field>
-            <field name="target">inline</field>
+            <!--<field name="target">inline</field>-->
             <field name="arch" type="xml">
                 <form string="">
                     <sheet>
                         <group>
                             <!--<field name="category_combine" target="inline" options="{'no_open': True, 'no_create_edit': True, 'no_quick_create': True}" widget="selection"/>-->
-                            <field name="category_combine2"/>
+                            <field name="category_combine2" widget="radio"/>
                         </group>
                     </sheet>
                 </form>
@@ -29,7 +29,7 @@
                                  <div class="oe_resource_vignette">
 
                         <div class="oe_resource_details">
-                            <ul><field name="category_combine2"/>
+                            <ul><field name="category_combine2" widget="radio"/>
 <!--Here you have to write the object's field name which you want to display in kanban view -->
                                <!--<li><field name="category_combine"/></li>-->
                                <!--<li><field name="category_combine"/></li>-->
