@@ -9,7 +9,6 @@
                     <sheet>
                         <group>
                             <field name="heading"/>
-                            <field name="url_heading"/>
                             <field name="category1"/>
                             <field name="category2"/>
                             <field name="category3"/>
@@ -17,6 +16,7 @@
                             <field name="category5"/>
                             <field name="category6"/>
                             <field name="category7"/>
+                            <field name="url_heading"/>
                             <field name="url_category1"/>
                             <field name="url_combine"/>
                         </group>
@@ -32,7 +32,6 @@
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="heading"/>
-                    <field name="url_heading"/>
                     <field name="category1"/>
                     <field name="category2"/>
                     <field name="category3"/>
@@ -40,6 +39,7 @@
                     <field name="category5"/>
                     <field name="category6"/>
                     <field name="category7"/>
+                    <field name="url_heading"/>
                     <field name="url_category1"/>
                     <field name="url_combine"/>
                 </tree>

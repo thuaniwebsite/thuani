@@ -30,31 +30,48 @@ class ThuaniCategoryCombine3(models.Model):
 
     # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
     @api.onchange('heading')
-    def set_heading_url(self):
-
+    def set_url_heading(self):
         # replace space with dash; make everything lowercase .lower()
         self.url_heading = str(self.heading).replace(' ', '-').lower()
-        # if base has no data
+        # if combine url has no data, convert boolean False to empty string; need to convert it to empty from boolean, else boolean error
         if self.url_combine == False:
             self.url_combine = ''
-        # if not self.url_combine:
-        #     self.url_combine = str("/" + self.url_heading)
-        # # else combine as normal
-        # else:
-        #     self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+        # remove boolean error (must be str, not bool)
+        if self.url_category1 == False:
+            self.url_category1 = ''
+        # if heading has data (not None)
+        if not self.heading is None:
+            # AND if category1 has data (not None)
+            if not self.category1 is None:
+                self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+            # Heading has data, category1 dont have data
+            else:
+                self.url_combine = str("/" + self.url_heading + self.url_category1)
+        # if heading has data
+        if not self.heading:
+            # AND if category1 has data (not None)
+            if not self.category1 is None:
+                self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+            # Heading has data, category1 dont have data
+            else:
+                self.url_combine = str("/" + self.url_heading)
         return
-    #
+
+    # Making category1 replace space with dash; make all heading lowercase. When heading is updated, the url is updated
     @api.onchange('category1')
     def set_url_category1(self):
-    #     # replace space with dash; make everything lowercase .lower()
+        # replace space with dash; make everything lowercase .lower()
         self.url_category1 = str(self.category1).replace(' ', '-').lower()
-    #     if not self.category1:
-    #         # if base has no data
-    #         self.url_combine = str("/" + self.url_heading)
-    #     else:
-    #         # else combine as normal
-    #         self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+        # if category1 has NO data
+        if not self.category1:
+            self.url_combine = str("/" + self.url_heading)
+        # if category1 HAS data
+        else:
+            self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
         return
+
+
+
 
 class ThuaniPost(models.Model):
     _name = "thuani.post"
