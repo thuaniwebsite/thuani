@@ -65,15 +65,6 @@ class ThuaniPost2(models.Model):
     base_many = fields.Many2one(comodel_name="thuani.base", string="Base Many", required=False, )
 
 
-# class ThuaniCategoryRank(models.Model):
-#     _name = "thuani.category.rank"
-#     _description = "thuani Category Rank"
-#     _rec_name = "category_rank"
-#
-#     category_rank = fields.Char(string="Category Rank", required=False, )
-#     odoofield
-
-
 class ThuaniCategory(models.Model):
     _name = "thuani.category"
     _description = "thuani Category"
@@ -84,23 +75,8 @@ class ThuaniCategory(models.Model):
     # Category for the Post.
     # url is linked to Category for now. In future can be change to dynamic
 
-    category1 = fields.Char(string="Cat1", required=False, )
-    category2 = fields.Char(string="Cat2", required=False, )
-    category3 = fields.Char(string="Cat3", required=False, )
-    category4 = fields.Char(string="Cat4", required=False, )
-    category5 = fields.Char(string="Cat5", required=False, )
-    category6 = fields.Char(string="Cat6", required=False, )
-    category7 = fields.Char(string="Cat7", required=False, )
-    category8 = fields.Char(string="Cat8", required=False, )
-    url_category1 = fields.Char(string="URL Cat1", required=False, )
-    url_category2 = fields.Char(string="URL Cat2", required=False, )
-    url_category3 = fields.Char(string="URL Cat3", required=False, )
-    url_category4 = fields.Char(string="URL Cat4", required=False, )
-    url_category5 = fields.Char(string="URL Cat5", required=False, )
-    url_category6 = fields.Char(string="URL Cat6", required=False, )
-    url_category7 = fields.Char(string="URL Cat7", required=False, )
-    url_category8 = fields.Char(string="URL Cat8", required=False, )
-
+    category = fields.Char(string="Cat", required=False, )
+    url_category = fields.Char(string="URL Cat", required=False, )
 
 class ThuaniCategoryCombine(models.Model):
     _name = "thuani.category.combine"
@@ -155,3 +131,80 @@ class ThuaniCheckbox(models.Model):
     blue = fields.Boolean('Blue')
     pink = fields.Boolean('Pink')
     yellow = fields.Boolean('Yellow')
+
+
+class ThuaniCategory1(models.Model):
+    _name = "thuani.category1"
+    _description = "thuani Category1"
+    _rec_name = "category1"
+
+    # notation for string heading Category = String Cat; eg Cat1, Cat2 means category url rank 1, then rank 2 (Cat2)
+    # Combined category url = /url_cat1/url_cat2/url_cat3/ etc
+    # Category for the Post.
+    # url is linked to Category for now. In future can be change to dynamic
+
+    category1 = fields.Char(string="Cat1", required=False, )
+    url_category1 = fields.Char(string="URL Cat1", required=False, )
+
+
+class ThuaniCategory2(models.Model):
+    _name = "thuani.category2"
+    _description = "thuani Category2"
+    _rec_name = "category2"
+
+    category2 = fields.Char(string="Cat2", required=False, )
+    url_category2 = fields.Char(string="URL Cat2", required=False, )
+
+
+class ThuaniCategory3(models.Model):
+    _name = "thuani.category3"
+    _description = "thuani Category3"
+    _rec_name = "category3"
+
+    category3 = fields.Char(string="Cat3", required=False, )
+    url_category3 = fields.Char(string="URL Cat3", required=False, )
+
+class ThuaniCategory4(models.Model):
+    _name = "thuani.category4"
+    _description = "thuani Category4"
+    _rec_name = "category4"
+
+    category4 = fields.Char(string="Cat4", required=False, )
+    url_category4 = fields.Char(string="URL Cat4", required=False, )
+
+class ThuaniCategory5(models.Model):
+    _name = "thuani.category5"
+    _description = "thuani Category5"
+    _rec_name = "category5"
+
+    category5 = fields.Char(string="Cat5", required=False, )
+    url_category5 = fields.Char(string="URL Cat5", required=False, )
+
+class ThuaniCategory6(models.Model):
+    _name = "thuani.category6"
+    _description = "thuani Category6"
+    _rec_name = "category6"
+
+    category6 = fields.Char(string="Cat6", required=False, )
+    url_category6 = fields.Char(string="URL Cat6", required=False, )
+
+
+class ThuaniCategory7(models.Model):
+    _name = "thuani.category7"
+    _description = "thuani Category7"
+    _rec_name = "category7"
+
+    category7 = fields.Char(string="Cat7", required=False, )
+    url_category7 = fields.Char(string="URL Cat7", required=False, )
+
+
+class ThuaniCategory8(models.Model):
+    _name = "thuani.category8"
+    _description = "thuani Category8"
+    _rec_name = "category8"
+
+    category8 = fields.Char(string="Cat8", required=False, )
+    url_category8 = fields.Char(string="URL Cat8", required=False, )
+
+
+

@@ -59,7 +59,8 @@
             <field name="name">Category Combine</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">thuani.category.combine</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <!--view mode default tree, with option kanban-->
+            <field name="view_mode">tree,kanban,form</field>
             <field name="target">inline</field>
             <!--<field name="limit">100</field>-->
             <field name="help" type="html">
