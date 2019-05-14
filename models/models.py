@@ -3,6 +3,59 @@
 from odoo import models, fields, api
 
 
+class ThuaniCategoryCombine3(models.Model):
+    _name = "thuani.category.combine3"
+    _description = "thuani Category Combine3"
+    _rec_name = "heading"
+
+    heading = fields.Char(string="Heading", required=False, )  # Heading (Title) of the Post/Article
+    url_heading = fields.Char(string="URL Heading", required=False, )  # URL of the post
+
+    category1 = fields.Char(string="Cat1", required=False, )
+    category2 = fields.Char(string="Cat2", required=False, )
+    category3 = fields.Char(string="Cat3", required=False, )
+    category4 = fields.Char(string="Cat4", required=False, )
+    category5 = fields.Char(string="Cat5", required=False, )
+    category6 = fields.Char(string="Cat6", required=False, )
+    category7 = fields.Char(string="Cat7", required=False, )
+    url_category1 = fields.Char(string="URL cat1", required=False, )
+    url_category2 = fields.Char(string="URL cat2", required=False, )
+    url_category3 = fields.Char(string="URL cat3", required=False, )
+    url_category4 = fields.Char(string="URL cat4", required=False, )
+    url_category5 = fields.Char(string="URL cat5", required=False, )
+    url_category6 = fields.Char(string="URL cat6", required=False, )
+    url_category7 = fields.Char(string="URL cat7", required=False, )
+
+    url_combine = fields.Char(string="URL Combine", required=False, )
+
+    # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
+    @api.onchange('heading')
+    def set_heading_url(self):
+
+        # replace space with dash; make everything lowercase .lower()
+        self.url_heading = str(self.heading).replace(' ', '-').lower()
+        # if base has no data
+        if self.url_combine == False:
+            self.url_combine = ''
+        # if not self.url_combine:
+        #     self.url_combine = str("/" + self.url_heading)
+        # # else combine as normal
+        # else:
+        #     self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+        return
+    #
+    @api.onchange('category1')
+    def set_url_category1(self):
+    #     # replace space with dash; make everything lowercase .lower()
+        self.url_category1 = str(self.category1).replace(' ', '-').lower()
+    #     if not self.category1:
+    #         # if base has no data
+    #         self.url_combine = str("/" + self.url_heading)
+    #     else:
+    #         # else combine as normal
+    #         self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+        return
+
 class ThuaniPost(models.Model):
     _name = "thuani.post"
     _description = "thuani Post"
@@ -114,13 +167,6 @@ class ThuaniCategoryCombine2(models.Model):
     #     }
 
 
-class ThuaniCategoryCombine3(models.Model):
-    _name = "thuani.category.combine3"
-    _description = "thuani Category Combine3"
-    _rec_name = "category_combine3"
-
-    category_combine3 = fields.Char(string="category combine3", required=False, )
-    url_category_combine3 = fields.Char(string="URL category combine3", required=False, )
 
 
 # TODO: Check for unique url when all is combined. If not unique at serial number in postname

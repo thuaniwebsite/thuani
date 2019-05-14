@@ -8,7 +8,17 @@
                 <form string="">
                     <sheet>
                         <group>
-                            <field name="category_combine3"/>
+                            <field name="heading"/>
+                            <field name="url_heading"/>
+                            <field name="category1"/>
+                            <field name="category2"/>
+                            <field name="category3"/>
+                            <field name="category4"/>
+                            <field name="category5"/>
+                            <field name="category6"/>
+                            <field name="category7"/>
+                            <field name="url_category1"/>
+                            <field name="url_combine"/>
                         </group>
                     </sheet>
                 </form>
@@ -21,14 +31,24 @@
             <field name="model">thuani.category.combine3</field>
             <field name="arch" type="xml">
                 <tree string="">
-                    <field name="category_combine3"/>
+                    <field name="heading"/>
+                    <field name="url_heading"/>
+                    <field name="category1"/>
+                    <field name="category2"/>
+                    <field name="category3"/>
+                    <field name="category4"/>
+                    <field name="category5"/>
+                    <field name="category6"/>
+                    <field name="category7"/>
+                    <field name="url_category1"/>
+                    <field name="url_combine"/>
                 </tree>
             </field>
         </record>
 
 
         <record id="action_view_thuani_category_combine3" model="ir.actions.act_window">
-            <field name="name">action.view.thuani.category.combine3</field>
+            <field name="name">Category Combine3</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">thuani.category.combine3</field>
             <field name="view_mode">tree,form</field>
