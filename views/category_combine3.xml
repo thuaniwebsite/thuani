@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_thuani_category_combine3" model="ir.ui.view">
+            <field name="name">view.form.thuani.category.combine3</field>
+            <field name="model">thuani.category.combine3</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="category_combine3"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_tree_thuani_category_combine3" model="ir.ui.view">
+            <field name="name">view.tree.thuani.category.combine3</field>
+            <field name="model">thuani.category.combine3</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="category_combine3"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_view_thuani_category_combine3" model="ir.actions.act_window">
+            <field name="name">action.view.thuani.category.combine3</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.category.combine3</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Combine category 3
+              </p>
+            </field>
+        </record>
+
+
+    <!--thuani > Blog > Category Combine3-->
+    <menuitem id="menu_thuani_category_combine3" name="Category Combine3" parent="menu_thuani_blog_categ" action="action_view_thuani_category_combine3" sequence=""/>
+    </data>
+</odoo>

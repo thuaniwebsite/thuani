@@ -31,6 +31,7 @@
         'views/category.xml',
         'views/category_combine.xml',
         'views/category_combine2.xml',
+        'views/category_combine3.xml',
         'views/checkbox.xml',
     ],
     # only loaded in demonstration mode

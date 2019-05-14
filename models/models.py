@@ -114,6 +114,15 @@ class ThuaniCategoryCombine2(models.Model):
     #     }
 
 
+class ThuaniCategoryCombine3(models.Model):
+    _name = "thuani.category.combine3"
+    _description = "thuani Category Combine3"
+    _rec_name = "category_combine3"
+
+    category_combine3 = fields.Char(string="category combine3", required=False, )
+    url_category_combine3 = fields.Char(string="URL category combine3", required=False, )
+
+
 # TODO: Check for unique url when all is combined. If not unique at serial number in postname
 
 # Create new menu:
@@ -122,6 +131,10 @@ class ThuaniCategoryCombine2(models.Model):
 # security/ir.model.access.csv add new line >
 # access_thuani_category_combine,thuani.thuani,model_thuani_category_combine,,1,1,1,1
 # access_uniqueNameOfClass; model_ is _name in your class
+
+
+
+
 
 
 class ThuaniCheckbox(models.Model):
