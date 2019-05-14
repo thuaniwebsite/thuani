@@ -79,8 +79,27 @@ class ThuaniCategory(models.Model):
     _description = "thuani Category"
     _rec_name = "category"
 
-    category = fields.Char(string="Category", required=False, )
-    category_url = fields.Char(string="Category URL", required=False, )
+    # notation for string heading Category = String Cat; eg Cat1, Cat2 means category url rank 1, then rank 2 (Cat2)
+    # Combined category url = /url_cat1/url_cat2/url_cat3/ etc
+    # Category for the Post.
+    # url is linked to Category for now. In future can be change to dynamic
+
+    category1 = fields.Char(string="Cat1", required=False, )
+    category2 = fields.Char(string="Cat2", required=False, )
+    category3 = fields.Char(string="Cat3", required=False, )
+    category4 = fields.Char(string="Cat4", required=False, )
+    category5 = fields.Char(string="Cat5", required=False, )
+    category6 = fields.Char(string="Cat6", required=False, )
+    category7 = fields.Char(string="Cat7", required=False, )
+    category8 = fields.Char(string="Cat8", required=False, )
+    url_category1 = fields.Char(string="URL Cat1", required=False, )
+    url_category2 = fields.Char(string="URL Cat2", required=False, )
+    url_category3 = fields.Char(string="URL Cat3", required=False, )
+    url_category4 = fields.Char(string="URL Cat4", required=False, )
+    url_category5 = fields.Char(string="URL Cat5", required=False, )
+    url_category6 = fields.Char(string="URL Cat6", required=False, )
+    url_category7 = fields.Char(string="URL Cat7", required=False, )
+    url_category8 = fields.Char(string="URL Cat8", required=False, )
 
 
 class ThuaniCategoryCombine(models.Model):
