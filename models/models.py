@@ -11,6 +11,7 @@ class ThuaniCategoryCombine3(models.Model):
     heading = fields.Char(string="Heading", required=False, )  # Heading (Title) of the Post/Article
     url_heading = fields.Char(string="URL Heading", required=False, )  # URL of the post
 
+
     category1 = fields.Char(string="Cat1", required=False, )
     category2 = fields.Char(string="Cat2", required=False, )
     category3 = fields.Char(string="Cat3", required=False, )
@@ -32,30 +33,50 @@ class ThuaniCategoryCombine3(models.Model):
     @api.onchange('heading')
     def set_url_heading(self):
         # replace space with dash; make everything lowercase .lower()
-        self.url_heading = str(self.heading).replace(' ', '-').lower()
+        # heading not False
+        if self.heading != False:
+            self.url_heading = str(self.heading).replace(' ', '-').lower()
+        else:
+            self.url_heading ="false2 aa"
         # if combine url has no data, convert boolean False to empty string; need to convert it to empty from boolean, else boolean error
         if self.url_combine == False:
             self.url_combine = ''
         # remove boolean error (must be str, not bool)
         if self.url_category1 == False:
             self.url_category1 = ''
-        # if heading has data (not None)
-        if not self.heading is None:
-            # AND if category1 has data (not None)
-            if not self.category1 is None:
-                self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
-            # Heading has data, category1 dont have data
+        # heading no data
+        if self.heading == "":
+            # heading no data; category1 no data
+            if self.category1 == "":
+                self.url_combine = str("heading no data, category no data a")
+            # heading no data; category has data
             else:
-                self.url_combine = str("/" + self.url_heading + self.url_category1)
-        # if heading has data
-        if not self.heading:
-            # AND if category1 has data (not None)
-            if not self.category1 is None:
-                self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
-            # Heading has data, category1 dont have data
+                self.url_combine = str("/" + self.url_category1 + "heading has data, category no data b")
+        # heading has data
+        else:
+            # heading has data, category1 no data
+            if self.category1 == "":
+                self.url_combine = str("/" + self.url_heading + "heading has data, cat no data c")
+            # Heading has data, category1 has data
             else:
-                self.url_combine = str("/" + self.url_heading)
+                self.url_combine = str("/" + self.url_category1 + self.url_heading + "heading has data, cat has data d")
         return
+
+        # # if heading has data (not None)
+        # if self.heading != "":
+        #     # AND if category1 has data (not None)
+        #     if self.category1 != "":
+        #         self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading + "heading has data, category has data a")
+        #     # Heading has data, category1 dont have data
+        #     else:
+        #         self.url_combine = str("/" + self.url_heading + self.url_category1 + "heading has data, category no data b")
+        # else:
+        #     # heading no data, category1 has data
+        #     if self.category1 != "":
+        #         self.url_combine = str("/" + self.url_category1 + "heading no data, cat has data c")
+        #     # Heading no data, category1 dont have data
+        #     else:
+        #         self.url_combine = str("heading no data, cat no data d")
 
     # Making category1 replace space with dash; make all heading lowercase. When heading is updated, the url is updated
     @api.onchange('category1')
@@ -284,3 +305,31 @@ class ThuaniCategory8(models.Model):
 
 
 
+    # # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
+    # @api.onchange('heading')
+    # def set_url_heading(self):
+    #     # replace space with dash; make everything lowercase .lower()
+    #     self.url_heading = str(self.heading).replace(' ', '-').lower()
+    #     # if combine url has no data, convert boolean False to empty string; need to convert it to empty from boolean, else boolean error
+    #     if self.url_combine == False:
+    #         self.url_combine = ''
+    #     # remove boolean error (must be str, not bool)
+    #     if self.url_category1 == False:
+    #         self.url_category1 = ''
+    #     # if heading has data (not None)
+    #     if not self.heading is None:
+    #         # AND if category1 has data (not None)
+    #         if not self.category1 is None:
+    #             self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+    #         # Heading has data, category1 dont have data
+    #         else:
+    #             self.url_combine = str("/" + self.url_heading + self.url_category1)
+    #     # if heading no data
+    #     if not self.heading:
+    #         # AND if category1 has data (not None)
+    #         if not self.category1 is None:
+    #             self.url_combine = str("/" + self.url_category1 + "/" + self.url_heading)
+    #         # Heading has data, category1 dont have data
+    #         else:
+    #             self.url_combine = str("/" + self.url_heading)
+    #     return
