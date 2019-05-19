@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_thuani_category_combine4" model="ir.ui.view">
+            <field name="name">view.form.thuani.category.combine4</field>
+            <field name="model">thuani.category.combine4</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="heading"/>
+                            <field name="category1"/>
+                            <field name="category2"/>
+                            <field name="category3"/>
+                            <field name="category4"/>
+                            <field name="category5"/>
+                            <field name="category6"/>
+                            <field name="category7"/>
+                            <field name="url_heading"/>
+                            <field name="url_category1"/>
+                            <field name="url_combine"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_tree_thuani_category_combine4" model="ir.ui.view">
+            <field name="name">view.tree.thuani.category.combine4</field>
+            <field name="model">thuani.category.combine4</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="heading"/>
+                    <field name="category1"/>
+                    <field name="category2"/>
+                    <field name="category3"/>
+                    <field name="category4"/>
+                    <field name="category5"/>
+                    <field name="category6"/>
+                    <field name="category7"/>
+                    <field name="url_heading"/>
+                    <field name="url_category1"/>
+                    <field name="url_combine"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_view_thuani_category_combine4" model="ir.actions.act_window">
+            <field name="name">Category Combine4</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.category.combine4</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Combine category 4
+              </p>
+            </field>
+        </record>
+
+
+    <!--thuani > Blog > Category Combine4-->
+    <menuitem id="menu_thuani_category_combine4" name="Category Combine4" parent="menu_thuani_blog_categ" action="action_view_thuani_category_combine4" sequence=""/>
+    </data>
+</odoo>
