@@ -9,7 +9,7 @@
                     <sheet>
                         <group>
                             <field name="heading"/>
-                            <field name="category1"/>
+                            <field name="category1_m21" widget="radio" options="{'horizontal': true}"/>
                             <field name="category2"/>
                             <field name="category3"/>
                             <field name="category4"/>
@@ -32,7 +32,7 @@
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="heading"/>
-                    <field name="category1"/>
+                    <field name="category1_m21" widget="radio"/>
                     <field name="category2"/>
                     <field name="category3"/>
                     <field name="category4"/>

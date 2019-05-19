@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="form_view_thuani_category1" model="ir.ui.view">
+            <field name="name">form.view.thuani.category1</field>
+            <field name="model">thuani.category1</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="category1"/>
+                            <field name="url_category1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tree_view_thuani_category1" model="ir.ui.view">
+            <field name="name">tree.view.thuani.category1</field>
+            <field name="model">thuani.category1</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="category1"/>
+                    <field name="url_category1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_thuani_category1" model="ir.actions.act_window">
+            <field name="name">Category1</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.category1</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Add new category1
+              </p>
+            </field>
+        </record>
+
+
+    <!--thuani > Master > Category1 -->
+    <menuitem id="menu_thuani_category1" name="Category1" parent="menu_thuani_master_categ" action="action_view_thuani_category1" sequence=""/>
+    </data>
+</odoo>
