@@ -9,7 +9,7 @@
                     <sheet>
                         <group>
                             <field name="category1"/>
-                            <field name="url_category1"/>
+                            <!--<field name="url_category1"/>-->
                         </group>
                     </sheet>
                 </form>
@@ -22,7 +22,7 @@
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="category1"/>
-                    <field name="url_category1"/>
+                    <!--<field name="url_category1"/>-->
                 </tree>
             </field>
         </record>

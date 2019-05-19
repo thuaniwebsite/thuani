@@ -312,7 +312,7 @@ class ThuaniCategory1(models.Model):
     _rec_name = "category1"
 
     category1 = fields.Char(string="Cat1", required=False, )
-    url_category1 = fields.Char(string="URL cat1", required=False, )
+    # url_category1 = fields.Char(string="URL cat1", required=False, )
 
     @api.onchange('category1')
     def set_url_category1(self):
@@ -358,9 +358,9 @@ class ThuaniCategoryCombine4(models.Model):
         else:
             self.url_heading = str(self.heading).replace(' ', '-').lower()
         if self.category1_m21 == False:
-            self.url_category1_m21 = ""
+            self.url_category1 = ""
         else:
-            self.url_category1_m21 = str(self.category1_m21).replace(' ', '-').lower()
+            self.url_category1 = str(self.category1_m21.category1).replace(' ', '-').lower()
         if self.url_combine == False:
             self.url_combine = ""
         # heading no data
@@ -387,13 +387,13 @@ class ThuaniCategoryCombine4(models.Model):
         if self.heading == False:
             self.url_heading = ""
         if self.category1_m21 == False:
-            self.url_category1_m21 = ""
+            self.url_category1 = ""
         if self.url_combine == False:
             self.url_combine = ""
         # if self.url_combine == False:
         #     self.url_combine = ""
         # replace space with dash; make everything lowercase .lower()
-        self.url_category1 = str(self.category1_m21).replace(' ', '-').lower()
+        self.url_category1 = str(self.category1_m21.category1).replace(' ', '-').lower()
         # if category1 has NO data
         if not self.category1_m21:
             self.url_combine = str("/" + self.url_heading)
@@ -412,7 +412,7 @@ class ThuaniCategoryCombine4(models.Model):
         if self.category1_m21 == False:
             self.url_category1 = ""
         else:
-            self.url_category1 = str(self.category1_m21).replace(' ', '-').lower()
+            self.url_category1 = str(self.category1_m21.category1).replace(' ', '-').lower()
         if self.url_combine == False:
             self.url_combine = ""
         return
