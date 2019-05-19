@@ -10,6 +10,8 @@
                         <group>
                             <field name="heading"/>
                             <field name="category1_m21" widget="radio" options="{'horizontal': true}"/>
+                            <button name="your_button" string="Some string here" type="object"/>
+                            <!--<field name="category1_m21"/>-->
                             <field name="category2"/>
                             <field name="category3"/>
                             <field name="category4"/>
@@ -32,7 +34,7 @@
             <field name="arch" type="xml">
                 <tree string="">
                     <field name="heading"/>
-                    <field name="category1_m21" widget="radio"/>
+                    <field name="category1_m21"/>
                     <field name="category2"/>
                     <field name="category3"/>
                     <field name="category4"/>

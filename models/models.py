@@ -349,6 +349,8 @@ class ThuaniCategoryCombine4(models.Model):
 
     url_combine = fields.Char(string="URL Combine", required=False, )
 
+
+
     # Making heading replace space with dash; make all heading lowercase. When heading is updated, the url is updated
     @api.onchange('heading')
     def set_url_heading(self):
@@ -415,4 +417,12 @@ class ThuaniCategoryCombine4(models.Model):
             self.url_category1 = str(self.category1_m21.category1).replace(' ', '-').lower()
         if self.url_combine == False:
             self.url_combine = ""
+        return
+
+    @api.multi
+    def your_button(self):
+        self.category1_m21 = ""
+
+        ThuaniCategoryCombine4.set_url_category1_m21(self)
+        self.url_category1 = ""
         return
