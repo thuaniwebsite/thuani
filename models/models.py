@@ -331,7 +331,7 @@ class ThuaniCategoryCombine4(models.Model):
     heading = fields.Char(string="Heading", required=False, )  # Heading (Title) of the Post/Article
     url_heading = fields.Char(string="URL Heading", required=False, )  # URL of the post
 
-    category1_m21 = fields.Many2one(comodel_name="thuani.category1", string="Category1", required=False, )
+    category1_m21 = fields.Many2one(comodel_name="thuani.category1", string="Cat1", required=False, )
     # category1 = fields.Char(string="Cat1", required=False, )
     category2 = fields.Char(string="Cat2", required=False, )
     category3 = fields.Char(string="Cat3", required=False, )
@@ -421,8 +421,10 @@ class ThuaniCategoryCombine4(models.Model):
 
     @api.multi
     def your_button(self):
+        # clear category1
         self.category1_m21 = ""
-
+        # update url category1
         ThuaniCategoryCombine4.set_url_category1_m21(self)
+        # change url category 1 to string from boolean false
         self.url_category1 = ""
         return

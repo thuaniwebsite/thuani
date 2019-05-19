@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
         <record id="view_form_thuani_category_combine4" model="ir.ui.view">
             <field name="name">view.form.thuani.category.combine4</field>
             <field name="model">thuani.category.combine4</field>
             <field name="arch" type="xml">
                 <form string="">
+                    <header>
+                        <button name="your_button" string="Category1 Clear" type="object"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="heading"/>
                             <field name="category1_m21" widget="radio" options="{'horizontal': true}"/>
-                            <button name="your_button" string="Some string here" type="object"/>
-                            <!--<field name="category1_m21"/>-->
                             <field name="category2"/>
                             <field name="category3"/>
                             <field name="category4"/>
