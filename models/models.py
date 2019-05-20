@@ -381,10 +381,14 @@ class ThuaniCategoryCombine4(models.Model):
             self.url_heading = ""
         else:
             self.url_heading = str(self.heading).replace(' ', '-').lower()
-        if self.category1_m21 == False:
-            self.url_category1 = ""
-        else:
+        # if self.category1_m21 == False:
+        if isinstance(self.category1_m21, str):
             self.url_category1 = str(self.category1_m21.category1).replace(' ', '-').lower()
+        else:
+            self.url_category1 = ""
+        #     self.url_category1 = ""
+        # else:
+        #     self.url_category1 = str(self.category1_m21.category1).replace(' ', '-').lower()
         if self.url_combine == False:
             self.url_combine = ""
 
