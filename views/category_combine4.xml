@@ -13,7 +13,8 @@
                     <sheet>
                         <group>
                             <field name="heading"/>
-                            <field name="category1_m21" widget="radio" options="{'horizontal': true}"/>
+                            <!--<field name="category1_m21" widget="radio" options="{'horizontal': true}"/>-->
+                            <field name="category1_m21"/>
                             <field name="category2"/>
                             <field name="category3"/>
                             <field name="category4"/>
@@ -21,8 +22,9 @@
                             <field name="category6"/>
                             <field name="category7"/>
                             <field name="url_heading"/>
-                            <field name="url_category1"/>
                             <field name="url_combine"/>
+                            <field name="url_category1"/>
+
                         </group>
                     </sheet>
                 </form>
