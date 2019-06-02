@@ -33,6 +33,7 @@
         'views/category_combine2.xml',
         'views/category_combine3.xml',
         'views/category_combine4.xml',
+        'views/category_combine5.xml',
         'views/category1.xml',
         'views/checkbox.xml',
     ],

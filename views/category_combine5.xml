@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="form_view_thuani_category_combine5" model="ir.ui.view">
+           <field name="name">form.view.thuani.category.combine5</field>
+           <field name="model">thuani.category.combine5</field>
+           <field name="arch" type="xml">
+               <form string="">
+                    <header>
+                        <button name="your_button" string="Category1 Clear" type="object"/>
+                    </header>
+                   <sheet>
+                       <group>
+                           <field name="heading"/>
+                           <field name="url_heading"/>
+                           <field name="category1_m21" widget="radio" options="{'horizontal': true}"/>
+                           <field name="url_category1"/>
+                          <field name="url_combine"/>
+                       </group>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+        <record id="tree_view_thuani_category_combine5" model="ir.ui.view">
+            <field name="name">tree.view.thuani.category.combine5</field>
+            <field name="model">thuani.category.combine5</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="heading"/>
+                    <field name="url_heading"/>
+                    <field name="category1_m21"/>
+                    <field name="url_category1"/>
+                    <field name="url_combine"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_thuani_category_combine5" model="ir.actions.act_window">
+            <field name="name">Cat Combine5</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">thuani.category.combine5</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Create new data
+              </p>
+            </field>
+        </record>
+
+    <!--thuani > Blog > Category Combine5-->
+    <menuitem id="menu_thuani_category_combine5" name="Category Combine5" parent="menu_thuani_blog_categ" action="action_view_thuani_category_combine5" sequence=""/>
+    </data>
+</odoo>
